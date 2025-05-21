@@ -412,6 +412,9 @@ class QtArchives:
             os_name += "_x86"
         elif os_name != "linux_arm64" and os_name != "all_os" and os_name != "windows_arm64":
             os_name += "_x64"
+
+        if self.version == Version("6.7.3") and self.arch == "win64_msvc2022_64":
+            name = "qt6_673_msvc2022"
         os_target_folder = posixpath.join(
             "online/qtsdkrepository",
             os_name,
